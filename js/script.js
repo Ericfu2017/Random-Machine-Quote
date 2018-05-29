@@ -1,4 +1,4 @@
-
+/*
 $(document).ready(function(){
         
     function getQuote() {
@@ -24,7 +24,30 @@ $(document).ready(function(){
 
 });
 
+*/
 
+function mycallback(data) {
+    console.log(data);
+   $('#single-quote').html(data[0].content);
+   $('#author').text("-- " + data[0].title)
+}
+
+$(document).ready(function(){
+    
+    function getQuote(){
+       
+        $.ajax ({
+            url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=mycallback', 
+            dataType: 'jsonp'
+        }) 
+
+    
+    };
+
+    getQuote();
+    
+
+})
 
 
 
