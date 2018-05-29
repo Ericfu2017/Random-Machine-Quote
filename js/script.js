@@ -19,17 +19,23 @@ $(document).ready(function(){
                 
           })
         }
+    var backgroudImgUrl = "/img/water.jpg";
+    $('body').append('<img class="background-img" src="' + backgroudImgUrl + '">')    
     getQuote();
+    $('#next').on('click', function(){
+        getQuote();
+    })
+    
     
 
 });
-
 */
+
 
 function mycallback(data) {
     console.log(data);
-   $('#single-quote').html(data[0].content);
-   $('#author').text("-- " + data[0].title)
+   $('#single-quote').html(data[0].content); 
+   $('#author').text("-- " + data[0].title);
 }
 
 $(document).ready(function(){
@@ -41,13 +47,15 @@ $(document).ready(function(){
             dataType: 'jsonp'
         }) 
 
-    
-    };
-
-    getQuote();
+    }
+    var backgroudImgUrl = "/img/water.jpg";
+    $('body').append('<img class="background-img" src="' + backgroudImgUrl + '">');
+    getQuote();  
+    $('#next').click(getQuote);
     
 
 })
+
 
 
 

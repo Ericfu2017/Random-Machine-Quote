@@ -1,12 +1,19 @@
+body {
+    font-family: 'GidoleRegular';
+}
 .center-div {
-    margin: 10rem auto;
-    height: 15rem;
+    margin: 8rem auto;
+    height: 25rem;
     width: 40rem;
+}
+
+#quote-container {
+    height: 18rem;
 }
 
 #random-quote {
     padding: 10px;
-    background: rgba(145, 3, 3, 0.3);
+    background: rgba(145, 3, 3, 0);
     border-color: rgba(145, 3, 3, 0.3);
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -15,7 +22,7 @@
 
 #single-quote {
     padding: 10px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -23,4 +30,37 @@
 #author {
     margin: 20px;
     text-align: right;
+}
+
+.button {
+    background-color: white;
+    border: 2px solid #f44336;
+    color: black;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 1;
 }
