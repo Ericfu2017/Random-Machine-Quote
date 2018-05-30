@@ -34,8 +34,11 @@ $(document).ready(function(){
 
 function mycallback(data) {
     console.log(data);
-   $('#single-quote').html(data[0].content); 
-   $('#author').text("-- " + data[0].title);
+    quote = data[0].content;
+    author = data[0].title;
+   $('#single-quote').html(quote); 
+   $('#author').text("-- " + author);
+   text = $('#single-quote').text();
 }
 
 $(document).ready(function(){
@@ -51,11 +54,18 @@ $(document).ready(function(){
     var backgroudImgUrl = "/img/water.jpg";
     $('body').append('<img class="background-img" src="' + backgroudImgUrl + '">');
     getQuote();  
-    $('#next').click(getQuote);
+    $('#next').on('click', function(event){
+        event.preventDefault()
+        getQuote();
+        $('#quote-container').fadeIn(900);
+    });
+    $('#share').on('click', function(event){
+        event.preventDefault();
+        window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text + ' -- ' + author));
+    });
     
 
 })
-
 
 
 
