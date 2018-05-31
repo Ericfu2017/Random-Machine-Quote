@@ -39,6 +39,7 @@ function mycallback(data) {
    $('#single-quote').html(quote); 
    $('#author').text("-- " + author);
    text = $('#single-quote').text();
+   console.log(text);
 }
 
 $(document).ready(function(){
@@ -57,7 +58,6 @@ $(document).ready(function(){
     $('#next').on('click', function(event){
         event.preventDefault()
         getQuote();
-        $('#quote-container').fadeIn(900);
     });
     $('#share').on('click', function(event){
         event.preventDefault();
